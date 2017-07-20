@@ -1,0 +1,87 @@
+<meta charset="UTF-8">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 18px;
+   background-color: #F5EA21;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #F5EA21;
+}
+
+#teste{
+ background-color: #F5EA21;
+}
+</style>
+</head>
+<body>
+<table id="teste" style="width:100%;">
+<tr>
+    <td style="width:50%;"><img src="C:\Users\mcastro\Desktop\img\logo-buscape.svg"></td>
+    <td style="width:50%;" align="right" >
+		<a href="carrinho.html"> Ver Carrinho de compras </a>
+	</td>
+</table>
+<table id="myTable">
+  <tr>
+    <td>
+		<div align="center">		
+			<button type="button" id="adicionar1" id="produto1" onclick="AddCarrinho('Iphone', 1, '2.00', 1)"> <input type="image" src="C:\Users\mcastro\Desktop\img\iphone.jpg"> </button>
+		</div>
+	</td>
+  </tr>
+    <td>
+		<div align="center">
+			<button type="button" id="adicionar1" id="produto1" onclick="AddCarrinho('Smart TV Samsung', 1, '3.90', 2)"> <input type="image" src="C:\Users\mcastro\Desktop\img\4-layout-psd.jpg"> </button>
+		</div>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	<div align="center">
+		<button type="button" id="adicionar1" id="produto1" onclick="AddCarrinho('Refrigerador Brastemp', 1, '11.90', 3)"> <input type="image" src="C:\Users\mcastro\Desktop\img\2-layout-psd.jpg"> </button>
+	</div>
+	</td>
+  </tr>
+</table>
+</body>
+</html>
+
+<script>
+	function AddCarrinho(produto, qtd, valor, posicao)
+	{
+		localStorage.setItem("produto" + posicao, produto);
+		localStorage.setItem("qtd" + posicao, qtd);
+		valor = valor * qtd;
+		localStorage.setItem("valor" + posicao, valor);
+		
+	}
+</script>
